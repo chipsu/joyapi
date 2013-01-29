@@ -1,0 +1,6 @@
+#!/bin/sh
+#echo "joyapi++.o..."
+#g++ -c joyapi.cpp -o joyapi++.o
+echo "example.bin..."
+g++ -o example.bin joyapi.cpp example.cpp #joyapi++.o
+
