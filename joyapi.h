@@ -25,17 +25,17 @@ namespace JoyAPI {
  * @todo EnumDevices() (with names and caps)
  */
 struct Device {
-	
+    
     struct Event {
-		enum Type {
-			EVENT_AXIS,
-			EVENT_BUTTON,
-		};
-		uint32_t time;
-		int16_t value;
-		Type type;
-		uint8_t number;
-	};
+        enum Type {
+            EVENT_AXIS,
+            EVENT_BUTTON,
+        };
+        uint32_t time;
+        int16_t value;
+        Type type;
+        uint8_t number;
+    };
     
     static int GetNumDevices();
     static int GetDefaultDeviceId();
@@ -53,8 +53,8 @@ struct Device {
 
 protected:
     
-	virtual void OnOpened() {}
-	virtual void OnClosed() {}
+    virtual void OnOpened() {}
+    virtual void OnClosed() {}
     virtual void OnEvent(const Event &e) {}
     
 protected:
@@ -72,16 +72,16 @@ protected:
 };
 
 struct SimpleDevice : public Device {
-	SimpleDevice();
-	virtual ~SimpleDevice();
+    SimpleDevice();
+    virtual ~SimpleDevice();
     int GetAxis(int id) const;
     int GetButton(int id) const;
 
 protected:
-	virtual void OnOpened();
-	virtual void OnClosed();
+    virtual void OnOpened();
+    virtual void OnClosed();
     virtual void OnEvent(const Event &e);
-	
+    
 private:
     int *m_axes;
     int *m_buttons;
